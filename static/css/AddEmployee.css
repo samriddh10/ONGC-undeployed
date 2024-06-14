@@ -1,0 +1,116 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+h1{
+    font-size: 40px;
+    letter-spacing: 2px;
+    font-family: "Protest Riot", sans-serif;
+}
+h2{
+    
+    margin: 5px 0px 30px 0px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+p{
+    
+}
+
+header {
+    background-color: rgb(156, 25, 25);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+
+}
+
+nav {
+    background-color:rgb(156, 25, 25);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    
+    border: 10px solid;
+    border-color: #fff;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.functions{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.buttons{
+    background-color: rgb(185, 33, 33);
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+.blocks{
+    margin:5px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.outer_container{
+
+    border: 1px solid black;
+    border-radius: 10px;
+
+}
+form{
+    padding: 20px;
+}
+.submitBotton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.signup{
+    background-color: rgb(185, 33, 33);
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+}
+
+label{
+    margin-right: 5px;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/AddEmployee.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&family=Protest+Riot&display=swap"
+        rel="stylesheet">
+</head>
+
+
+<body>
+    <header>
+        <h1>TrackNClassify</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="outer_container">
+            
+            <form action="/add_employee" method="POST">
+                <h2>Add employee details</h2>
+                <div class="middle">
+                    <div class="blocks">
+                        <label for="id">Employee ID:  </label>
+                        <input type="number" id="ID" name="ID" required>
+                    </div>
+                    <div class="blocks">
+                        <label for="id">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="blocks">
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" required>
+                    </div>
+                </div>
+                <div class="submitBotton">
+                    <button type="submit" class="signup">Add Employee</button>
+                </div>    
+            </form>
+
+        </div>
+       
+    </main>
+    <footer>                                                                        
+        <p>TrackNClassify</p>
+    </footer>
+
+</body>
+</html>
