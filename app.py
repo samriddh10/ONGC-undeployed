@@ -1,4 +1,4 @@
-from flask import Flask, render_template, Response, send_file, request, redirect, url_for
+from flask import Flask, render_template, Response, send_file, request, redirect, url_for, jsonify
 from flask_socketio import SocketIO, emit
 import cv2
 from pyzbar.pyzbar import decode
@@ -9,15 +9,23 @@ import time
 from pymongo import MongoClient
 import io
 import qrcode
-
-
-
+import firebase_admin
+from firebase_admin import credentials, auth
 
 app = Flask(__name__)
 socketio = SocketIO(app)
 camera = None  # Camera is initially off
 secret_key = "supersecretkey"
 uri = "mongodb+srv://samriddh_kumar:sam123@tracknclassify.kjmrfft.mongodb.net/?retryWrites=true&w=majority&appName=TrackNClassify"
+
+# MongoDB configuration
+client = MongoClient(uri)
+db = client["Employee"]
+collection = db["Employee"]
+
+# Initialize Firebase Admin SDK
+cred = credentials.Certificate("new_env/credentials/serviceAccountKey.json")
+firebase_admin.initialize_app(cred)
 
 def verify_token(token, secret_key, tolerance=1):
     current_time = int(time.time() / 60)
@@ -74,9 +82,6 @@ def generate_frames():
 
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
-
-
-
 
 # Function to generate a time-based token
 def generate_token(secret_key):
@@ -135,12 +140,9 @@ def generate_qr():
 
     return send_file(img_io, mimetype='image/png')
 
-
 @app.route('/scanner')
 def scanner():
     return render_template('scanner.html')
-
-
 
 @app.route('/start_camera')
 def start_camera():
@@ -157,49 +159,37 @@ def stop_camera():
         camera = None  # Set the camera to None to indicate it's off
     return 'Camera stopped'
 
-
-# MongoDB configuration
-client = MongoClient(uri)
-db = client["Employee"]
-collection = db["Employee"]
-
 @app.route('/AddEmployee')
 def AddEmployee():
     return render_template('AddEmployee.html')
 
 @app.route('/add_employee', methods=['POST'])
 def add_employee():
-    if request.method == 'POST':
-        employee_id = request.form['ID']
-        employee_name = request.form['name']
-        employee_age = request.form['age']
-        
+    data = request.get_json()
+    employee_id = data['ID']
+    employee_name = data['name']
+    employee_age = data['age']
+    employee_email = data['email']
+    employee_password = data['password']
+    
+    try:
         # Insert into MongoDB
         collection.insert_one({
             "ID": employee_id,
             "Name": employee_name,
-            "Age": employee_age
+            "Age": employee_age,
+            "Email": employee_email,
+            "Password": employee_password
         })
         
-        return redirect(url_for('AddEmployee'))
+        return jsonify({"success": True}), 200
+    
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 400
 
-
-
-
+    
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 400
 
 if __name__ == '__main__':
-    
     socketio.run(app, debug=True)
- 
-
-
-
-
-
-
-
-
-
-
-
-
