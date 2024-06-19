@@ -1,0 +1,236 @@
+<style>
+body {
+    font-family: Arial;
+}
+
+header {
+    background-color: rgb(156, 25, 25);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-family: Protest Riot;
+
+}
+.login {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+}
+
+.top {
+    margin-top: 35px;
+    width: 350px;
+    height: 350px;
+    border: solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    border-color: rgb(0, 0, 0, 0.1);
+}
+
+.logo-img {
+    margin-top: 30px;
+    width: 200px;
+    margin-bottom: 35px;
+
+}
+
+.userid {
+    width: 250px;
+    height: 34px;
+    font-size: 12px;
+    padding-left: 6px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: rgb(0, 0, 0, 0.2);
+    background-color: rgb(0, 0, 0, 0.02);
+}
+
+.password {
+    margin-top: 5px;
+    width: 250px;
+    height: 34px;
+    font-size: 12px;
+    padding-left: 6px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: rgb(0, 0, 0, 0.2);
+    background-color: rgb(0, 0, 0, 0.02);
+
+}
+
+#submit {
+    margin-top: 15px;
+    background-color: rgb(214, 24, 24);
+    color: white;
+    border: none;
+    width: 260px;
+    height: 32px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.or {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 260px;
+    height: 32px;
+
+
+
+}
+
+.OR {
+    padding-top: 13px;
+    color: rgb(0, 0, 0, 0.5);
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 13px;
+
+}
+
+.facebook-logo {
+    padding-top: 0;
+
+    width: 17px;
+}
+
+.facebook-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 260px;
+    height: 32px;
+    background-color: white;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+
+}
+
+.facebook {
+    color: rgb(9, 1, 117);
+    margin-left: 8px;
+    font-weight: bold;
+    padding-top: 1px;
+    font-size: 14px;
+
+}
+
+.forgot-password {
+    font-family: Arial;
+    font-size: 12px;
+    color: rgb(16, 37, 104);
+    margin-top: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.middle {
+    width: 350px;
+    height: 60px;
+    margin-top: 10px;
+    border: solid;
+    border-color: red;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-color: rgb(0, 0, 0, 0.1);
+
+
+}
+
+.signup {
+    font-family: Arial;
+    font-size: 14px;
+
+}
+
+.signup-button {
+    text-decoration: none;
+    color: rgb(56, 155, 248);
+    font-weight: bold;
+}
+
+.bottom {
+    width: 350px;
+    height: 100px;
+    border: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 17px;
+
+}
+
+.get-the-app {
+    font-size: 15px;
+}
+
+.apps {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    column-gap: 8px;
+}
+
+.apple {
+    background-color: black;
+    width: 135px;
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    align-items: center;
+    border-radius: 5px;
+
+}
+
+.apple-icon {
+    width: 45px;
+    height: 40px;
+    object-fit: cover;
+
+    align-items: left;
+    border-radius: 5px;
+
+}
+
+.google-icon {
+    width: 38px;
+    height: 40px;
+    object-fit: cover;
+    margin-left: 2px;
+
+    align-items: left;
+    border-radius: 5px;
+
+}
+
+.app-store {
+    font-size: 18px;
+}
+
+.google-play {
+    font-size: 16px;
+}
+
+.logo {
+    height: 90px;
+    margin-top: 50px;
+    font-size: 40px;
+    justify-content: center;
+    font-family: "Protest Riot", sans-serif;
+    color: rgb(191, 22, 22);
+
+}
+</style>

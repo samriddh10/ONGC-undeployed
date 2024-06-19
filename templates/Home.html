@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&family=Protest+Riot&display=swap"
+        rel="stylesheet">
+      
+      <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js" defer></script>
+      <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js" defer></script>
+     
+    
+</head>
+
+<body>
+    <header>
+        <h1>TrackNClassify</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Welcome to our Portal</h2>
+        <div class="functions">
+
+
+            <button class="buttons">
+                <a href="{{ url_for('QRgenerate') }}" class="buttons">
+                    <p>Generate New QR code</p>
+                </a>
+
+            </button>
+
+            <button class="buttons">
+                <a href="{{ url_for('scanner') }}" class="buttons">
+                    <p>Scan QR code</p>
+                </a>
+
+            </button>
+            <button class="buttons">
+                <a href="{{ url_for('AddEmployee') }}" class="buttons">
+                    <p>Add Employee</p>
+                </a>
+                
+            </button>
+        </div>
+    </main>
+    <footer>
+        <p>TrackNClassify</p>
+    </footer>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyClJZqBy3KW5NunjQPTRHhpPoGacc-pqT4",
+            authDomain: "tracknclassify.firebaseapp.com",
+            projectId: "tracknclassify",
+            storageBucket: "tracknclassify.appspot.com",
+            messagingSenderId: "924436702037",
+            appId: "1:924436702037:web:ca6fdb9f8d864be7b505dc",
+            measurementId: "G-JYM0W1WM9G"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+
+
+</body>
+<script>
+
+
+</script>
+
+
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Signup</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&family=Protest+Riot&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        header {
+            background-color: rgb(156, 25, 25);
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-family: Protest Riot;
+
+        }
+        .login {
+            width: 100%;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: top;
+            align-items: center;
+        }
+
+        .top {
+            margin-top: 35px;
+            width: 350px;
+            height: 350px;
+            border: solid;
+            display: flex;
+            flex-direction: column;
+            justify-content: top;
+            align-items: center;
+            border-color: rgb(0, 0, 0, 0.1);
+        }
+
+        .logo-img {
+            margin-top: 30px;
+            width: 200px;
+            margin-bottom: 35px;
+
+        }
+
+        .userid {
+            width: 250px;
+            height: 34px;
+            font-size: 12px;
+            padding-left: 6px;
+            border-radius: 5px;
+            border-width: 1px;
+            border-color: rgb(0, 0, 0, 0.2);
+            background-color: rgb(0, 0, 0, 0.02);
+        }
+
+        .password {
+            margin-top: 5px;
+            width: 250px;
+            height: 34px;
+            font-size: 12px;
+            padding-left: 6px;
+            border-radius: 5px;
+            border-width: 1px;
+            border-color: rgb(0, 0, 0, 0.2);
+            background-color: rgb(0, 0, 0, 0.02);
+
+        }
+
+        #submit {
+            margin-top: 15px;
+            background-color: rgb(214, 24, 24);
+            color: white;
+            border: none;
+            width: 260px;
+            height: 32px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .or {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 260px;
+            height: 32px;
+
+
+
+        }
+
+        .OR {
+            padding-top: 13px;
+            color: rgb(0, 0, 0, 0.5);
+            font-weight: bold;
+            font-family: Arial;
+            font-size: 13px;
+
+        }
+
+        .facebook-logo {
+            padding-top: 0;
+
+            width: 17px;
+        }
+
+        .facebook-button {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 260px;
+            height: 32px;
+            background-color: white;
+            border: none;
+            margin-top: 20px;
+            cursor: pointer;
+
+        }
+
+        .facebook {
+            color: rgb(9, 1, 117);
+            margin-left: 8px;
+            font-weight: bold;
+            padding-top: 1px;
+            font-size: 14px;
+
+        }
+
+        .forgot-password {
+            font-family: Arial;
+            font-size: 12px;
+            color: rgb(16, 37, 104);
+            margin-top: 20px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .middle {
+            width: 350px;
+            height: 60px;
+            margin-top: 10px;
+            border: solid;
+            border-color: red;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-color: rgb(0, 0, 0, 0.1);
+
+
+        }
+
+        .signup {
+            font-family: Arial;
+            font-size: 14px;
+
+        }
+
+        .signup-button {
+            text-decoration: none;
+            color: rgb(56, 155, 248);
+            font-weight: bold;
+        }
+
+        .bottom {
+            width: 350px;
+            height: 100px;
+            border: none;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            row-gap: 17px;
+
+        }
+
+        .get-the-app {
+            font-size: 15px;
+        }
+
+        .apps {
+            display: flex;
+            flex-direction: row;
+            color: white;
+            column-gap: 8px;
+        }
+
+        .apple {
+            background-color: black;
+            width: 135px;
+            display: flex;
+            flex-direction: row;
+            height: 40px;
+            align-items: center;
+            border-radius: 5px;
+
+        }
+
+        .apple-icon {
+            width: 45px;
+            height: 40px;
+            object-fit: cover;
+
+            align-items: left;
+            border-radius: 5px;
+
+        }
+
+        .google-icon {
+            width: 38px;
+            height: 40px;
+            object-fit: cover;
+            margin-left: 2px;
+
+            align-items: left;
+            border-radius: 5px;
+
+        }
+
+        .app-store {
+            font-size: 18px;
+        }
+
+        .google-play {
+            font-size: 16px;
+        }
+
+        .logo {
+            height: 90px;
+            margin-top: 50px;
+            font-size: 40px;
+            justify-content: center;
+            font-family: "Protest Riot", sans-serif;
+            color: rgb(191, 22, 22);
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>TrackNClassify</h1>
+    </header>
+    <div class="login">
+        <form>
+            <div class="top">
+                <div class="logo">
+                    TrackNclassify
+
+                </div>
+                <div>
+                    
+                    <input class="userid" type="email" placeholder="Email" id="email" required>
+                </div>
+                <div>
+                    
+                    <input class="password " type="password" placeholder="Password" id="password" required>
+                </div>
+
+                <div>
+                    <button id="submit" type="submit" onclick="
+                alert('Successfully Logged In!')">
+                        Sign up
+
+                    </button>
+                </div>
+                <!--
+
+            <div class="or">
+
+                <div style="color: rgb(0, 0, 0, 0.2);">____________</div>
+                <div class="OR">OR</div>
+                <div style="color: rgb(0, 0, 0, 0.2);">____________</div>
+
+            </div>
+            
+            <div>
+                <button class="facebook-button">
+                    <img class="facebook-logo" src="facebook-logo.png">
+                    <div class="facebook">Log in with Facebook</div>
+
+                </button>
+            </div>
+            -->
+                <div class="forgot-password">
+                    Forgot password?
+                </div>
+
+
+            </div>
+
+
+        </form>
+    </div>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+        
+
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyClJZqBy3KW5NunjQPTRHhpPoGacc-pqT4",
+            authDomain: "tracknclassify.firebaseapp.com",
+            projectId: "tracknclassify",
+            storageBucket: "tracknclassify.appspot.com",
+            messagingSenderId: "924436702037",
+            appId: "1:924436702037:web:ca6fdb9f8d864be7b505dc",
+            measurementId: "G-JYM0W1WM9G"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        
+
+
+        const submit = document.getElementById('submit');
+        submit.addEventListener('click', function (event) {
+            event.preventDefault();
+
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed up 
+                    alert('Creating account')
+                    const user = userCredential.user;
+                    window.location.href= '/Home'
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert('Error')
+                    // ..
+                });
+        })
+
+
+    </script>
+
+</body>
+
+
+</html>

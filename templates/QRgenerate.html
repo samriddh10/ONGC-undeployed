@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TrackNClassify</title>  
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/QRgenerate.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&family=Protest+Riot&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <h1>TrackNClassify</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Welcome to our Portal</h2>
+        <p>QR Code Generator</p>
+        <button id="generate-qr">
+            <p>Generate New QR code</p>
+        </button>
+        <div id="qr-code">Your QR Code will expire in 60 seconds</div>
+    </main>
+    
+    <footer>
+        <p>TrackNClassify</p>
+    </footer>
+
+    <script>
+        document.getElementById('generate-qr').addEventListener('click', function() {
+            fetch('/generate_qr')
+                .then(response => response.blob())
+                .then(blob => {
+                    const url = URL.createObjectURL(blob);
+                    const img = document.createElement('img');
+                    img.src = url;
+                    img.style.width = '300px';
+                    img.style.height = '300px';
+                    img.id = 'myImageId'; // Assigning an id
+                    document.getElementById('qr-code').innerHTML = '';
+                    document.getElementById('qr-code').appendChild(img);
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Employee</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/AddEmployee.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&family=Protest+Riot&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>TrackNClassify</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="outer_container">
+            <form id="employeeForm">
+                <h2>Add employee details</h2>
+                <div class="middle">
+                    <div class="blocks">
+                        <label for="id">Employee ID: </label>
+                        <input type="number" id="ID" name="ID" required>
+                    </div>
+                    <div class="blocks">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="blocks">
+                        <label for="email">Email:</label>
+                        <input id="email" type="email" name="email" required>
+                    </div>
+                    <div class="blocks">
+                        <label for="password">Password:</label>
+                        <input id="password" type="password" name="password" required>
+                    </div>
+                    <div class="blocks">
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" required>
+                    </div>
+                </div>
+                <div class="submitButton">
+                    <button class="signup" type="submit">Add Employee</button>
+                </div>
+                
+            </form>
+        </div>
+    </main>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyClJZqBy3KW5NunjQPTRHhpPoGacc-pqT4",
+            authDomain: "tracknclassify.firebaseapp.com",
+            projectId: "tracknclassify",
+            storageBucket: "tracknclassify.appspot.com",
+            messagingSenderId: "924436702037",
+            appId: "1:924436702037:web:ca6fdb9f8d864be7b505dc",
+            measurementId: "G-JYM0W1WM9G"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+
+        document.getElementById('employeeForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const employeeID = document.getElementById('ID').value;
+            const employeeName = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const age = document.getElementById('age').value;
+
+            fetch('/add_employee', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    ID: employeeID,
+                    name: employeeName,
+                    age: age,
+                    email: email,
+                    password: password
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    createUserWithEmailAndPassword(auth, email, password)
+                        .then((userCredential) => {
+                            alert('Employee added successfully and Firebase user created.');
+                        })
+                        .catch((error) => {
+                            alert('Error creating Firebase user: ' + error.message);
+                        });
+                } else {
+                    alert('Error adding employee: ' + data.error);
+                }
+            })
+            .catch(error => {
+                alert('Error: ' + error.message);
+            });
+        });
+    </script>
+</body>
+</html>
