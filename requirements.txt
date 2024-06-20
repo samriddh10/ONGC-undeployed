@@ -6,7 +6,7 @@ certifi==2024.6.2
 cffi==1.16.0
 charset-normalizer==3.3.2
 click==8.1.7
-cryptography==42.0.8
+cryptography==40.0.2
 dnspython==2.6.1
 firebase-admin==6.5.0
 Flask==3.0.3
@@ -50,6 +50,6 @@ rsa==4.9
 simple-websocket==1.0.0
 typing_extensions==4.12.2
 uritemplate==4.1.1
-urllib3==2.2.1
+urllib3==1.27
 Werkzeug==3.0.3
 wsproto==1.2.0
